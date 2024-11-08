@@ -1,0 +1,32 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 4 nov 2024, 11:55:57
+    Author     : ideapad 3
+*/
+
+
+.orange-background {
+    width: 220px;             /* Un poco más ancho que la tarjeta */
+    height: 220px;            /* Un poco más alto que la tarjeta */
+    background-color: #f1741c;
+    border-radius: 15px;      /* Bordes redondeados */
+    position: absolute;
+    top: 20px;                /* Ajuste vertical */
+    left: 20px;               /* Ajuste horizontal */
+    z-index: 0;               /* Asegura que esté detrás de la imagen */
+}
+
+
+.image-card {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;               /* Asegura que esté al frente */
+    background-color: white;
+    border-radius: 10px;      /* Opcional: bordes redondeados */
+}

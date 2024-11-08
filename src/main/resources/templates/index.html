@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/plantilla :: head"></head>
+
+<body>
+    <header th:replace="layout/plantilla :: header"></header>
+
+    <main>
+    <section class="text-left my-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Columna de texto y botón -->
+                <div class="col-md-8">
+                    <h1 class="display-4 font-weight-bold">Soporte y soluciones tecnológicas para hacer su vida más fácil</h1>
+                    <p class="lead">Nuestro capacitado y experimentado equipo ofrece sus servicios en programación, redes y TI. Contamos con experiencia en todos los lenguajes de programación.</p>
+                    <a class="btn btn-lg text-white mt-3" href="#" style="background-color: #f1741c;">Obtener Soporte</a>
+                </div>
+                
+            
+                <div class="col-md-4 d-flex justify-content-center">
+                        <div class="image-card">
+                            <img src="/Logo2.png" alt="Logo2" style="width: 80%; height: auto;">
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+    <footer th:replace="layout/plantilla :: footer"></footer>
+</body>
+</html>
