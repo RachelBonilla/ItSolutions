@@ -1,14 +1,85 @@
-/*
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
-*/
-/* 
-    Created on : 4 nov 2024, 11:55:57
-    Author     : ideapad 3
-*/
+/* Reset y estilos generales */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6;
+    color: #333;
+    line-height: 1.6;
+}
 
-.orange-background {
+/* Estilos del Header y Footer */
+header, footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1, footer p {
+    margin: 0;
+}
+
+/* Animación para efecto de fade-in */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Estilos para la sección "Nosotros" */
+.nosotros-section {
+    padding: 60px 20px;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    margin: 30px auto;
+    max-width: 800px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nosotros-section:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.nosotros-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.nosotros-section p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin-bottom: 10px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: color 0.3s ease;
+}
+
+.nosotros-section p:hover {
+    color: #d1e0ff;
+}
+
+/* Estilos específicos para la tarjeta y fondo */
+.card-container {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    margin: 20px auto;
+}
+
+.orange-background { 
     width: 220px;             /* Un poco más ancho que la tarjeta */
     height: 220px;            /* Un poco más alto que la tarjeta */
     background-color: #f1741c;
@@ -19,7 +90,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     z-index: 0;               /* Asegura que esté detrás de la imagen */
 }
 
-
 .image-card {
     width: 200px;
     height: 200px;
@@ -29,4 +99,30 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     z-index: 1;               /* Asegura que esté al frente */
     background-color: white;
     border-radius: 10px;      /* Opcional: bordes redondeados */
+    position: relative;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nosotros-section {
+        padding: 40px 15px;
+    }
+
+    .nosotros-section h1 {
+        font-size: 2em;
+    }
+
+    .nosotros-section p {
+        font-size: 1.1em;
+    }
+
+    .card-container {
+        width: 180px;
+        height: 180px;
+    }
+
+    .orange-background, .image-card {
+        width: 180px;
+        height: 180px;
+    }
 }
