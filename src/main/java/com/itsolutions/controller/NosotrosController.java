@@ -21,9 +21,9 @@ public class NosotrosController {
         return "soporte";
     }
 
-    @GetMapping("/iniciar_sesion")
+    @GetMapping("/iniciarSesion")
     public String iniciarSesion() {
-        return "iniciar_sesion";
+        return "iniciarSesion";
     }
 }
 

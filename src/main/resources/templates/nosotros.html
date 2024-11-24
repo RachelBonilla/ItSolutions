@@ -5,28 +5,53 @@
         <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <link rel="stylesheet" href="styles.css">
-                    </head>
-                    <body>
-                        <header th:replace="layout/plantilla :: header"></header>
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-                        <main>
-                            <section class="container nosotros-section animate-fade-in">
-                                <h1>Sobre Nosotros</h1>
-                                <p>
-                                    Nuestra misión es crear soluciones tecnológicas que empoderen a las personas y les den las herramientas para superar cualquier obstáculo. Éramos un grupo de amigos con una visión clara y un compromiso inquebrantable por desarrollar tecnología accesible que pueda transformar la vida de quienes la usen.
-                                </p>
+                        </head>
+                        <body>
+                            <header th:replace="layout/plantilla :: header"></header>
 
-                                <!-- Ejemplo de tarjeta con fondo naranja y una imagen sobre ella -->
-                                <div class="card-container">
-                                    <div class="orange-background"></div>
-                                    <div class="image-card">
-                                        <!-- Contenido de la tarjeta, como una imagen o texto -->
-                                        
+                            <main>
+                                <section class="nosotros-title">
+                                    <div class="left-color">
+                                        <h1>Sobre Nosotros</h1>
                                     </div>
-                                </div>
-                            </section>
-                        </main>
+                                    <div class="right-color">
+                                        <h1>Nuestra Misión</h1>
+                                    </div>
+                                </section>
 
-                        <footer th:replace="layout/plantilla :: footer"></footer>
-                    </body>
-                    </html>
+
+
+
+                                <section class="container nosotros-section animate-fade-in">
+                                    <!-- Misión -->
+                                    <p class="intro-text mission-text">
+                                        Nuestra misión es crear soluciones tecnológicas que empoderen a las personas, brindándoles herramientas 
+                                        para superar cualquier obstáculo. Comenzamos como un grupo de amigos con una visión clara y un compromiso 
+                                        inquebrantable de desarrollar tecnología accesible que pueda transformar la vida de quienes la usen.
+                                    </p>
+
+
+                                   
+                                    <div class="values-section">
+                                        <h2 class="section-title">Nuestros Valores</h2>
+                                        <div class="values-content">
+                                            <ul class="values-list">
+                                                <li><i class="fas fa-gavel icon-circle"></i><strong>Integridad:</strong> Actuamos con ética y respeto en cada proyecto.</li>
+                                                <li><i class="fas fa-user icon-circle"></i><strong>Accesibilidad:</strong> Queremos que la tecnología esté al alcance de todos.</li>
+                                                <li><i class="fas fa-lightbulb icon-circle"></i><strong>Innovación:</strong> Creemos en el poder de la creatividad para resolver problemas.</li>
+                                                <li><i class="fas fa-handshake icon-circle"></i><strong>Compromiso:</strong> Nos dedicamos al éxito de nuestros clientes y su satisfacción.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    </div>
+                                </section>
+
+
+                            </main>
+
+                            <footer th:replace="layout/plantilla :: footer"></footer>
+                        </body>
+                        </html>
