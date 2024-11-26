@@ -1,0 +1,259 @@
+.nosotros-title {
+    background: linear-gradient(90deg, #f1741c 50%, #f7d7b4 50%);
+    color: white;
+    text-align: center;
+    padding: 50px 0;
+    font-size: 2.5rem;
+}
+
+
+.nosotros-section {
+    padding: 20px 0; 
+}
+
+/* Contenedor principal */
+.nosotros-title {
+    display: flex;
+    height: 200px; 
+    margin: 0;
+    padding: 0;
+    overflow: hidden; 
+}
+
+/* Div izquierdo */
+.left-color {
+    flex: 1;
+    background-color: #f1741c;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0;
+}
+
+/* Div derecho */
+.right-color {
+    flex: 1;
+    background-color: #f7d7b4; 
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0;
+}
+/* Estilos generales para la sección de nosotros */
+.nosotros-section {
+    padding: 40px 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #fff;
+    text-align: center; 
+}
+
+.mission-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+/* Sección de valores centrada */
+.values-section {
+    background-color: #fff; 
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    text-align: center; 
+}
+
+/* Título de los valores */
+.section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Estilos para la lista de valores */
+.values-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.8;
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; 
+    justify-items: center; 
+}
+
+/* Estilo de cada ítem de la lista */
+.values-list li {
+    display: flex; 
+    align-items: center; 
+    justify-content: flex-start; 
+    text-align: left; 
+    position: relative;
+    height: 100%; 
+}
+
+/* Íconos circulares con nuevo color */
+.values-list li i {
+    background-color: #f1741c; 
+    color: white;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 1.5rem;
+    margin-right: 15px; 
+    transition: background-color 0.3s ease;
+    display: inline-block; 
+}
+
+.values-list li i, .values-list li strong {
+    vertical-align: middle; 
+}
+
+/* Estilo para la lista de valores */
+.values-list li {
+    margin-bottom: 25px;
+    display: inline-block; 
+    width: 40%; /* Ancho de cada elemento de la lista */
+    text-align: left; 
+    position: relative;
+}
+
+/* Estilos generales para la lista de valores */
+.values-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.8;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; /* Centra los ítems */
+}
+
+/* Cada ítem de la lista */
+.values-list li {
+    margin-bottom: 25px;
+    display: flex; 
+    align-items: center; 
+    width: 45%; 
+    padding: 10px;
+    text-align: left;
+    position: relative;
+}
+
+/* Íconos circulares con nuevo color */
+.values-list li i {
+    background-color: #f1741c; 
+    color: white;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+
+/* Estilo para el texto de cada valor */
+.values-list li strong {
+    font-weight: bold;
+    color: #333;
+    margin-right: 10px; 
+}
+
+/* Asegurando que el texto continúe en una sola línea */
+.values-list li span {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Ajustar la altura de la barra del navbar */
+.navbar {
+    height: 60px; /* Reduce la altura del navbar */
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem; /* Ajusta el padding inferior */
+}
+
+/* Ajustar el logo para que quede proporcional al nuevo tamaño */
+.navbar-brand img {
+    height: 60px; /* Reduce el tamaño del logo */
+}
+
+/* Ajustar el tamaño de la barra de navegación en pantallas pequeñas */
+.navbar-toggler {
+    padding: 0.25rem 0.75rem; /* Ajusta el tamaño del botón de menú en pantallas pequeñas */
+}
+/* Estilo para el banner */
+.banner-soporte {
+    background: url('banner.jpg') no-repeat center center/cover;
+    color: black;
+    text-align: center;
+    padding: 50px 20px;
+}
+.banner-soporte h1 {
+    font-size: 2.5em;
+}
+.banner-soporte p {
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+.banner-soporte .btn {
+    background: #3498db;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+/* Servicios */
+.servicios {
+    padding: 50px 20px;
+    background: #f9f9f9;
+}
+.servicios-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+}
+.servicio img {
+    max-width: 100px;
+    margin-bottom: 10px;
+}
+.servicio h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+/* Formulario */
+.contacto form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.contacto form input, 
+.contacto form textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.contacto form button {
+    background: #3498db;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.contacto form button:hover {
+    background: #2980b9;
+}

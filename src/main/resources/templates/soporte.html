@@ -1,11 +1,88 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/plantilla :: head">
+    <title>Soporte - ITsolutions</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header th:replace="layout/plantilla :: header"></header>
+
+    <main>
+        <!-- Sección de Banner -->
+        <section class="banner-soporte">
+            <div class="container">
+                <h1>Soporte Técnico</h1>
+                <p>Tu aliado para mantener tus sistemas funcionando de manera óptima.</p>
+                <a href="#contacto" class="btn btn-primary">Solicitar Soporte</a>
+            </div>
+        </section>
+
+        <!-- Sección de Descripción -->
+        <section class="descripcion-soporte">
+            <div class="container">
+                <h2>¿Por qué elegir nuestro soporte?</h2>
+                <p>
+                    Ofrecemos soluciones rápidas y eficaces para garantizar la continuidad de tu negocio. Nuestro equipo de expertos 
+                    está capacitado para resolver cualquier desafío técnico que enfrentes.
+                </p>
+                <ul class="beneficios">
+                    <li>Asistencia personalizada 24/7</li>
+                    <li>Monitoreo proactivo</li>
+                    <li>Respuesta inmediata</li>
+                    <li>Soporte en sitio y remoto</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sección de Servicios -->
+        <section class="servicios">
+            <div class="container">
+                <h2>Nuestros Servicios</h2>
+                <div class="servicios-grid">
+                    <div class="servicio">
+                        <img th:src="@{/imagenes/diagnostico.jpg}" alt="Diagnóstico Técnico" width="200"/>
+                        <h3>Diagnóstico Técnico</h3>
+                        <p>Identificamos problemas en tus sistemas y te ofrecemos soluciones eficientes.</p>
+                    </div>
+                    <div class="servicio">
+                        <img th:src="@{/imagenes/mantenimiento.jpg}" alt="Mantenimiento Preventivo" width="200"/>
+                        <h3>Mantenimiento Preventivo</h3>
+                        <p>Evita problemas mayores con un mantenimiento regular de tus equipos y software.</p>
+                    </div>
+                    <div class="servicio">
+                        <img th:src="@{/imagenes/remoto.jpg}" alt="Soporte Remoto" width="200"/>
+                        <h3>Soporte Remoto</h3>
+                        <p>Resolución inmediata de problemas sin necesidad de visitas físicas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Contacto -->
+        <section id="contacto" class="contacto">
+            <div class="container">
+                <h2>Contáctanos</h2>
+                <p>¿Necesitas ayuda? Llena el formulario y uno de nuestros expertos se pondrá en contacto contigo.</p>
+                <form th:action="@{/soporte/enviar}" method="post">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
+
+                    <label for="correo">Correo Electrónico:</label>
+                    <input type="email" id="correo" name="correo" placeholder="Ingresa tu correo" required>
+
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" placeholder="Describe tu problema o consulta" rows="4" required></textarea>
+
+                    <button type="submit" class="btn btn-primary">Enviar Solicitud</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer th:replace="layout/plantilla :: footer"></footer>
+</body>
 </html>
+
+
