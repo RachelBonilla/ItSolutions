@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="layout/plantilla :: head">
+        <title>Soluciones</title>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link rel="stylesheet" href="styles.css">
+                    </head>
+                    <body>
+                        <header th:replace="layout/plantilla :: header"></header>
+                        <main>
+                            <!-- Sección de Banner -->
+                            <section class="banner-soporte">
+                                <div class="container">
+                                    <h1>Soluciones a tus preguntas</h1>
+                                    <p>Contamos con variedad de temas con posibles soluciones a tus preguntas. Si no encuentras tu respuesta, haz clic en la sección "Soporte" para una atención más personalizada.</p>
+                                </div>
+                            </section>
+
+                            <section id="carrusel" class="carrusel-container">
+                                <div class="carrusel-wrapper">
+                                    <!-- Lista de puntos de información -->
+                                    <div class="info-list">
+                                        <ul>
+                                            <li>Portales Web.</li>
+                                            <li>Aplicaciones SaaS.</li>
+                                            <li>Correo Electrónico Web.</li>
+                                            <li>Web Services.</li>
+                                            <li>Firewalls e IPS.</li>
+                                            <li>Múltiples Data Centers.</li>
+                                            <li>Enlaces Múltiples.</li>
+                                            <li>Intranets/Servicios de colaboración.</li>
+                                            <li>Acceso Remoto/VPN SSL.</li>
+                                            <li>Arquitecturas de referencia.</li>
+                                            <li>On-premise and Cloud Data Centers.</li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Carrusel de Imágenes -->
+                                    <div class="carrusel">
+                                        <button class="carrusel-btn left-btn">&lt;</button>
+                                        <div class="carrusel-track">
+                                            <div class="carrusel-item">
+                                                <img th:src="@{/imagenes/diagnostico.jpg}" alt="Diagnóstico Técnico" class="img-servicio" />
+                                            </div>
+                                            <div class="carrusel-item">
+                                                <img th:src="@{/imagenes/LOGO7.jpg}" alt="Mantenimiento Preventivo" class="img-servicio" />
+                                            </div>
+                                            <div class="carrusel-item">
+                                                <img th:src="@{/imagenes/remoto.jpg}" alt="Soporte Remoto" class="img-servicio" />
+                                            </div>
+                                        </div>
+                                        <button class="carrusel-btn right-btn">&gt;</button>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- Sección de Acordeón -->
+                            <section id="servicios" class="servicios">
+                                <div class="container-title">
+                                    <h2>Nuestros Servicios</h2>
+                                </div>
+                                <div class="accordion">
+                                    <div class="accordion-item">
+                                        <div class="accordion-header">Programación</div>
+                                        <div class="accordion-content">
+                                            <ul>
+                                                <li>Java: Conceptos básicos de programación orientada a objetos.</li>
+                                                <li>Python: Automatización de tareas y análisis de datos.</li>
+                                                <li>HTML: Estructuración de contenido web.</li>
+                                                <li>C++: Gestión de memoria y rendimiento.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <div class="accordion-header">Hardware</div>
+                                        <div class="accordion-content">
+                                            <ul>
+                                                <li>Componentes: Diagnóstico y resolución de problemas.</li>
+                                                <li>Ensamblaje: Selección y pruebas de componentes.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <div class="accordion-header">Ciberseguridad</div>
+                                        <div class="accordion-content">
+                                            <ul>
+                                                <li>Seguridad en Redes: Firewalls y detección de intrusos.</li>
+                                                <li>Inteligencia Artificial: Análisis automatizado de amenazas.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <div class="accordion-header">Redes</div>
+                                        <div class="accordion-content">
+                                            <ul>
+                                                <li>Conectividad: Diagnóstico y optimización de ancho de banda.</li>
+                                                <li>Conectividad en la Nube: Servicios híbridos y seguridad.</li>
+                                                <li>Virtualización: Tecnologías como VMware y Hyper-V.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <style>
+                                /* Contenedor general */
+                                .carrusel-container {
+                                    max-width: 1200px;
+                                    margin: 20px auto;
+                                }
+
+                                /* Contenedor del carrusel y puntos */
+                                .carrusel-wrapper {
+                                    display: flex;
+                                    align-items: flex-start;
+                                    gap: 20px;
+                                }
+
+                                /* Lista de puntos de información */
+                                .info-list {
+                                    flex: 1;
+                                    padding: 10px;
+                                }
+
+                                .info-list ul {
+                                    list-style-type: disc;
+                                    padding-left: 20px;
+                                    margin: 0;
+                                }
+
+                                .info-list li {
+                                    margin-bottom: 10px;
+                                    font-size: 16px;
+                                    color: #333;
+                                }
+
+                                /* Carrusel */
+                                .carrusel {
+                                    flex: 2;
+                                    position: relative;
+                                    overflow: hidden;
+                                    border-radius: 10px;
+                                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                                    max-width: 600px; /* Tamaño reducido */
+                                }
+
+                                .carrusel-track {
+                                    display: flex;
+                                    transition: transform 0.5s ease-in-out;
+                                }
+
+                                .carrusel-item {
+                                    min-width: 100%;
+                                }
+
+                                .carrusel-item img {
+                                    width: 100%;
+                                    display: block;
+                                    height: auto; /* Asegura proporciones */
+                                }
+
+                                .carrusel-btn {
+                                    position: absolute;
+                                    top: 50%;
+                                    transform: translateY(-50%);
+                                    background-color: rgba(0, 0, 0, 0.5);
+                                    color: white;
+                                    border: none;
+                                    padding: 10px;
+                                    cursor: pointer;
+                                    z-index: 1;
+                                    border-radius: 50%;
+                                }
+
+                                .carrusel-btn:hover {
+                                    background-color: rgba(0, 0, 0, 0.7);
+                                }
+
+                                .left-btn {
+                                    left: 10px;
+                                }
+
+                                .right-btn {
+                                    right: 10px;
+                                }
+
+                                /* Acordeón */
+                                .accordion {
+                                    max-width: 1500px;
+                                    margin: 40px auto;
+                                }
+
+                                .container-title {
+                                    text-align: center; /* Centra el texto horizontalmente */
+                                    margin: 20px 0; /* Añade espacio superior e inferior */
+                                }
+
+                                .container-title h2 {
+                                    font-size: 24px; /* Ajusta el tamaño de fuente del título */
+                                    font-weight: bold; /* Aplica negrita al texto */
+                                    color: #333; /* Cambia el color si es necesario */
+                                }
+
+                                .accordion-item {
+                                    border: 1px solid #a31631;
+                                    margin-bottom: 10px;
+                                    border-radius: 5px;
+                                    overflow: hidden;
+                                }
+
+                                .accordion-header {
+                                    background-color: #f1741c;
+                                    color: white;
+                                    padding: 15px;
+                                    cursor: pointer;
+                                    font-size: 18px;
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                }
+
+                                .accordion-header:hover {
+                                    background-color: #8c122b;
+                                }
+
+                                .accordion-content {
+                                    max-height: 0;
+                                    overflow: hidden;
+                                    background-color: #f9f9f9;
+                                    padding: 0 15px; /* Ajustar el padding */
+                                    transition: max-height 0.5s ease, padding 0.5s ease;
+                                }
+
+                                .accordion-content ul {
+                                    list-style-type: disc;
+                                    padding-left: 20px;
+                                }
+
+                                .accordion-content li {
+                                    margin-bottom: 10px;
+                                }
+
+                                .accordion-item.active .accordion-content {
+                                    max-height: 300px; /* Ajusta este valor según el contenido */
+                                    padding: 15px; /* Restaurar el padding */
+                                }
+                            </style>
+
+                            <script>
+                                // Carrusel de Imágenes
+                                const carruselTrack = document.querySelector('.carrusel-track');
+                                const carruselItems = document.querySelectorAll('.carrusel-item');
+                                const leftBtn = document.querySelector('.left-btn');
+                                const rightBtn = document.querySelector('.right-btn');
+
+                                let currentIndex = 0;
+
+                                function updateCarrusel() {
+                                    const itemWidth = carruselItems[0].getBoundingClientRect().width;
+                                    carruselTrack.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+                                }
+
+                                rightBtn.addEventListener('click', () => {
+                                    if (currentIndex < carruselItems.length - 1) {
+                                        currentIndex++;
+                                        updateCarrusel();
+                                    }
+                                });
+
+                                leftBtn.addEventListener('click', () => {
+                                    if (currentIndex > 0) {
+                                        currentIndex--;
+                                        updateCarrusel();
+                                    }
+                                });
+
+                                window.addEventListener('resize', updateCarrusel);
+
+                                // Acordeón interactividad con transición suave
+                                const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+                                accordionHeaders.forEach(header => {
+                                    header.addEventListener('click', () => {
+                                        const item = header.parentElement;
+                                        const content = item.querySelector('.accordion-content');
+
+                                        // Cierra otros elementos
+                                        document.querySelectorAll('.accordion-item').forEach(otherItem => {
+                                            if (otherItem !== item) {
+                                                otherItem.classList.remove('active');
+                                                const otherContent = otherItem.querySelector('.accordion-content');
+                                                if (otherContent) {
+                                                    otherContent.style.maxHeight = null;
+                                                    otherContent.style.padding = '0 15px';
+                                                }
+                                            }
+                                        });
+
+                                        // Alternar el estado del acordeón actual
+                                        item.classList.toggle('active');
+                                        if (item.classList.contains('active')) {
+                                            content.style.maxHeight = content.scrollHeight + 'px';
+                                            content.style.padding = '15px';
+                                        } else {
+                                            content.style.maxHeight = null;
+                                            content.style.padding = '0 15px';
+                                        }
+                                    });
+                                });
+                            </script>
+
+                        </main>
+                        <footer th:replace="layout/plantilla :: footer"></footer>
+                    </body>
+                    </html>
