@@ -2,84 +2,89 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
 
-<head th:fragment="head">
-    <meta charset="UTF-8">
-    <title>ITSolutions</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/estilos.css">
-</head>
+    <head th:fragment="head">
+        <meta charset="UTF-8">
+            <title>ITSolutions</title>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+                    <link rel="stylesheet" href="/css/estilos.css">
+                        </head>
 
-<body>
+                        <body>
 
-    <header th:fragment="header">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container">
-                <a href="/" class="navbar-brand">
-                    <img src="imagenes/LOGO1.png" alt="LOGO1" class="LOGO img-fluid" />
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Mostrar solo si el usuario está autenticado -->
-                        <li class="nav-item" sec:authorize="isAuthenticated()">
-                            <a class="nav-link" href="/nosotros">Nosotros</a>
-                        </li>
-                        <li class="nav-item" sec:authorize="isAuthenticated()">
-                            <a class="nav-link" href="/soluciones">Soluciones</a>
-                        </li>
-                        <li class="nav-item" sec:authorize="isAuthenticated()">
-                            <a class="nav-link" href="/soporte">Soporte</a>
-                        </li>
-                        <!-- Mostrar solo si el usuario NO está autenticado -->
-                        <li class="nav-item" sec:authorize="!isAuthenticated()">
-                            <a class="nav-link" href="/iniciarSesion">Iniciar Sesión</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="btn ml-3" href="/contacto" style="background-color: #f1741c; color: white;">Contáctenos</a>
-                        </li>
-                    </ul>
-                    <div>
-                        <ul class="navbar-nav" sec:authorize="isAuthenticated()">
-                            <li class="nav-item text-white my-auto">
-                                <!-- Mostrar imagen y nombre del usuario autenticado -->
-                                <img th:src="Imagen" alt="your image" height="40" class="rounded-circle" />
-                                <span sec:authentication='name'>Santi</span>
-                            </li>
-                            <li class="nav-item my-auto">
-                                <!-- Botón de logout -->
-                                <form method="post" th:action="@{/logout}">
-                                    <button class="btn btn-dark">
-                                        <i class="fas fa-sign-out-alt"></i>
-                                    </button>
-                                </form>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
+                            <header th:fragment="header">
+                                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                                    <div class="container">
+                                        <a href="/" class="navbar-brand">
+                                            <img src="imagenes/LOGO1.png" alt="LOGO1" class="LOGO img-fluid" />
+                                        </a>
 
-    <main>
-        <section class="text-center my-5">
-            <div class="container">
-                <h3 class="display-4">Bienvenido a nuestra página</h3>
-                <p class="lead">Ofrecemos servicios de alta calidad para cubrir todas sus necesidades.</p>
-            </div>
-        </section>
-    </main>
+                                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                                                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                            <span class="navbar-toggler-icon"></span>
+                                        </button>
+                                        <div class="collapse navbar-collapse" id="navbarNav">
+                                            <ul class="navbar-nav ml-auto">
+                                                <!-- Mostrar "Nosotros" si el usuario no es ADMIN -->
+                                                <li class="nav-item" sec:authorize="!hasRole('ROLE_ADMIN')">
+                                                    <a class="nav-link" href="/nosotros">Nosotros</a>
+                                                </li>
+                                                <!-- Mostrar "Usuarios" si el usuario es ADMIN -->
+                                                <li class="nav-item" sec:authorize="hasRole('ROLE_ADMIN')">
+                                                    <a class="nav-link" href="/usuario/listado">Usuarios</a>
+                                                </li>
+                                                <li class="nav-item" sec:authorize="isAuthenticated()">
+                                                    <a class="nav-link" href="/soluciones">Soluciones</a>
+                                                </li>
+                                                <li class="nav-item" sec:authorize="isAuthenticated()">
+                                                    <a class="nav-link" href="/soporte">Soporte</a>
+                                                </li>
+                                                <li class="nav-item" sec:authorize="hasRole('ROLE_ADMIN')">
+                                                    <a class="nav-link" href="/formularios"> Formularios</a>
+                                                </li>
+                                                <!-- Mostrar solo si el usuario NO está autenticado -->
+                                                <li class="nav-item" sec:authorize="!isAuthenticated()">
+                                                    <a class="nav-link" href="/iniciarSesion">Iniciar Sesión</a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                                <ul class="navbar-nav d-flex align-items-center" sec:authorize="isAuthenticated()">
+                                                    <li class="nav-item">
 
-    <footer th:fragment="footer" class="bg-light text-center py-4">
-        <div class="container">
-            <p class="mb-0">© 2024 ITSolutions. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+                                                        <span class="nav-link font-weight-bold" style="color: #f1741c;" sec:authentication='name'>Santi</span>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <!-- Botón de logout con ícono -->
+                                                        <form method="post" th:action="@{/logout}" class="m-0">
+                                                            <button class="btn btn-link p-0" style="color: #f1741c;">
+                                                                <i class="bi bi-box-arrow-right" style="font-size: 1.2rem;"></i>
+                                                            </button>
+                                                        </form>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </nav>
+                            </header>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+                            <main>
+                                <section class="text-center my-5">
+                                    <div class="container">
+                                        <h3 class="display-4">Bienvenido a nuestra página</h3>
+                                        <p class="lead">Ofrecemos servicios de alta calidad para cubrir todas sus necesidades.</p>
+                                    </div>
+                                </section>
+                            </main>
 
-</body>
-</html>
+                            <footer th:fragment="footer" class="bg-light text-center py-4">
+                                <div class="container">
+                                    <p class="mb-0">© 2024 ITSolutions. Todos los derechos reservados.</p>
+                                </div>
+                            </footer>
+
+                            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+                            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+                        </body>
+                        </html>

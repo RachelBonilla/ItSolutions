@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <link rel="stylesheet" href="styles.css">
+
+    <head th:replace="layout/plantilla :: head">
+        <title>Formularios Enviados</title>
+    </head>
+    <body>
+        <header th:replace="layout/plantilla :: header"></header>
+        <main>
+            <h1>Formularios Enviados</h1>
+            <div style="overflow-x:auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                            <th>Mensaje</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="formulario : ${formularios}">
+                            <td th:text="${formulario.id}"></td>
+                            <td th:text="${formulario.nombre}"></td>
+                            <td th:text="${formulario.correo}"></td>
+                            <td th:text="${formulario.mensaje}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+        <footer th:replace="layout/plantilla :: footer"></footer>
+    </body>
+</html>
+
+

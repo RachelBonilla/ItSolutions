@@ -10,35 +10,41 @@
         <div class="container my-5">
             <div class="row justify-content-center">
                 <div class="col-md-6">
-                    <div class="card shadow-lg">
-                        <div class="card-header text-white bg-warning text-center">
-                            <h2>Iniciar Sesión</h2>
+                    <div class="card shadow-lg" style="border-radius: 10px; overflow: hidden; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);">
+                        <div class="card-header text-white" style="background-color: #f1741c; text-align: center; padding: 20px 0;">
+                            <h2 style="margin: 0;">Iniciar Sesión</h2>
                         </div>
+
                         <div class="card-body">
                             <form method="POST" th:action="@{/iniciarSesion}">
-                                <div class="form-group my-3">
+                                <div class="form-group my-3" style="margin-bottom: 20px;">
                                     <label for="username"><i class="fas fa-user-lock"></i> Username:</label>
-                                    <input class="form-control" type="text" name="username" id="username" placeholder="Ingrese su usuario"/>
+                                    <input class="form-control" type="text" name="username" id="username" placeholder="Ingrese su usuario" 
+                                           style="border-radius: 5px; padding: 10px; margin-bottom: 15px; font-size: 1rem;"/>
                                 </div>
-                                <div class="form-group my-3">
+                                <div class="form-group my-3" style="margin-bottom: 20px;">
                                     <label for="password"><i class="fas fa-key"></i> Password:</label>
-                                    <input class="form-control" type="password" name="password" id="password" placeholder="Ingrese su contraseña"/>
+                                    <input class="form-control" type="password" name="password" id="password" placeholder="Ingrese su contraseña"
+                                           style="border-radius: 5px; padding: 10px; margin-bottom: 15px; font-size: 1rem;"/>
                                 </div>
                                 <div class="card-footer text-center">
-                                    <a th:href="@{/registro/nuevo}" class="btn btn-outline-primary btn-lg mx-2">
-                                        <i class="fas fa-user-plus"></i> Registrar
-                                    </a>
-                                    <a th:href="@{/registro/recordar}" class="btn btn-outline-info btn-lg mx-2">
-                                        <i class="fas fa-envelope"></i> Recordar
-                                    </a>
-                                    <button class="btn btn-warning btn-lg" type="submit">
-                                        <i class="fas fa-sign-in-alt"></i> Iniciar sesión
-                                    </button>
+                                    <!-- Agrupamos los botones en un contenedor para alinearlos horizontalmente -->
+                                    <div class="btn-group" style="display: flex; justify-content: space-between; gap: 10px;">
+                                        <a th:href="@{/registro/nuevo}" class="btn" style="background-color: #f1741c; color: white; padding: 10px 15px; border-radius: 5px; font-size: 1rem; transition: all 0.3s ease;">
+                                            <i class="fas fa-user-plus" style="margin-right: 8px;"></i> Registrar
+                                        </a>
+                                        <a th:href="@{/registro/recordar}" class="btn" style="background-color: #f1741c; color: white; padding: 10px 15px; border-radius: 5px; font-size: 1rem; transition: all 0.3s ease;">
+                                            <i class="fas fa-envelope" style="margin-right: 8px;"></i> Recordar
+                                        </a>
+                                        <button class="btn" type="submit" style="background-color: #f1741c; color: white; border-radius: 5px; padding: 10px 15px; font-size: 1rem; transition: all 0.3s ease;">
+                                            <i class="fas fa-sign-in-alt" style="margin-right: 8px;"></i> Iniciar sesión
+                                        </button>
+                                    </div>
                                 </div>
                             </form>
                         </div>
                     </div>
-                    <div th:if="${param.error != null}" class="alert alert-danger mt-3 text-center">
+                    <div th:if="${param.error != null}" class="alert alert-danger mt-3 text-center" style="margin-top: 20px; text-align: center; font-size: 1.1rem; background-color: #f8d7da; border-color: #f5c6cb;">
                         <strong>Error al ingresar</strong>
                     </div>
                 </div>
